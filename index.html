@@ -2,37 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    /* TODO 1: Use the grid-template-columns property plus the repeat and minmax functions and the keyword auto-fit to set up your grid */
+    /* TODO 1 & 2: Responsive grid using auto-fit + minmax */
     .container {
       display: grid;
-    /* TODO 2: For your minmax ( ) function, set a floor (minimum) width in pixels and a ceiling (maximum) width of 1fr */
-    
-    /* TODO 3: Set a small gap for your image gallery 
-      
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px; /* TODO 3 */
       padding: 15px;
     }
 
-    /* Prevents images from overflowing their respective grid cells */
-    .gallery img {
+    /* Prevents images from overflowing their grid cells */
+    .container img {
       width: 100%;
-   /* TODO 4: Set an image height -- in pixels -- so each image has a clean, uniform look */
-
-   /* TODO 5: Use CSS object-fit property so your images don't look squished or distorted */
-  
-
+      height: 200px; /* TODO 4 */
+      object-fit: cover; /* TODO 5 */
+      border-radius: 8px;
     }
+    /* Responsive image gallery layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 15px;
+}
+
+/* Prevent images from overflowing and keep them uniform */
+.container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Optional hover effect */
+.container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Individual gallery item */
+.gallery-item {
+  margin: 0;
+  text-align: center;
+}
+
+/* Image styling */
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Caption styling */
+.gallery-item figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
   </style>
 </head>
+
 <body>
-<!-- TODO 6: Add a DIV with a class of container -->
 
-<!-- TODO 7: Add 12 DIV elements to your container DIV -->
-<!-- NOTE: Each child DIV needs an image element with a custom ALT attribute -->
+  <!-- TODO 6: Container DIV -->
+  <div class="container">
 
- 
+    <!-- TODO 7: 12 image DIVs -->
+    <div><img src="img1.jpg" alt="Somebody studying"></div>
+    <div><img src="img2.jpg" alt="Two people traveling"></div>
+    <div><img src="img3.jpg" alt="a pretty picture"></div>
+    <div><img src="img4.jpg" alt="a woman behind some leaves"></div>
+    <div><img src="img5.jpg" alt="Pinnaple with glasses"></div>
+    <div><img src="img6.jpg" alt="Woman sitting on top of a car"></div>
+    <div><img src="img7.jpg" alt="Lady with hat"></div>
+    <div><img src="img8.jpg" alt="a guy taking notes"></div>
+    <div><img src="italy.jpg" alt="a ally in Italy"></div>
+    <div><img src="jacket.jpg" alt="Person in a jacket"></div>
+    <div><img src="journaling.jpg" alt="Lady doing working on computer"></div>
+    <div><img src="starbucks.jpg" alt="Woman in Starbucks"></div>
 
+  </div>
 
 </body>
 </html>
